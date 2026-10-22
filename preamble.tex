@@ -1,0 +1,209 @@
+% =============================================================
+%  preamble.tex  --  家庭数学辅导手册（北师大版 二年级上册）公共样式
+%  编译：xelatex（TeX Live 2025 / Windows 字体）
+% =============================================================
+
+% ---------- 页面 ----------
+\usepackage{geometry}
+\geometry{a4paper,top=2.3cm,bottom=2.2cm,left=2.0cm,right=2.0cm,
+          headheight=15pt,headsep=0.45cm,footskip=1.0cm}
+
+% ---------- 表格与列表 ----------
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.6em,topsep=2pt,itemsep=1.5pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=1.9em,topsep=2pt,itemsep=2pt,parsep=0pt}
+
+% ---------- 数学与符号 ----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ---------- 颜色 ----------
+\usepackage{xcolor}
+\definecolor{mainc}{HTML}{0F6E68}     % 主色：墨绿
+\definecolor{matc}{HTML}{B45309}      % 材料：赭
+\definecolor{sayc}{HTML}{1D4ED8}      % 话术：蓝
+\definecolor{pitc}{HTML}{B91C1C}      % 易错：红
+\definecolor{passc}{HTML}{15803D}     % 验收：绿
+\definecolor{playc}{HTML}{6D28D9}     % 游戏：紫
+\definecolor{tipc}{HTML}{334155}      % 提示：石墨
+
+% ---------- 框 ----------
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% ---------- 绘图 ----------
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,patterns,shapes.geometric,arrows.meta,decorations.pathreplacing}
+
+% 辅导课主框
+\newtcolorbox{lesson}[2]{enhanced,breakable,
+  colback=white,colframe=mainc,coltitle=white,
+  boxrule=1pt,arc=2mm,left=7pt,right=7pt,top=11pt,bottom=6pt,
+  before skip=16pt, after skip=10pt,
+  title={\heiti 任务 #1\hspace{0.6em}\normalfont\small 约 #2 分钟},
+  attach boxed title to top left={xshift=4mm,yshift=-2.4mm},
+  boxed title style={colback=mainc,arc=1.2mm,boxrule=0pt,
+                     left=5pt,right=5pt,top=1pt,bottom=1pt},
+  fonttitle=\bfseries}
+
+% 材料/道具
+\newtcolorbox{materials}{enhanced,breakable,
+  colback=matc!4,colframe=matc!75,
+  boxrule=0.7pt,arc=1.5mm,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  title={\heiti 先备货},coltitle=white,colbacktitle=matc!80,
+  fonttitle=\bfseries,breakable}
+
+% 家长话术
+\newtcolorbox{saybox}{enhanced,breakable,
+  colback=sayc!4,colframe=sayc!65,
+  boxrule=0.7pt,arc=1.5mm,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  title={\heiti 照这样问小豆角},coltitle=white,colbacktitle=sayc!70,
+  fonttitle=\bfseries,fontupper=\kaishu}
+
+% 易错
+\newtcolorbox{pitbox}{enhanced,breakable,
+  colback=pitc!4,colframe=pitc!65,
+  boxrule=0.7pt,arc=1.5mm,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  title={\heiti 翻车预警},coltitle=white,colbacktitle=pitc!70,
+  fonttitle=\bfseries,breakable}
+
+% 验收
+\newtcolorbox{passbox}{enhanced,breakable,
+  colback=passc!5,colframe=passc!70,
+  boxrule=0.7pt,arc=1.5mm,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  title={\heiti 过关条件},coltitle=white,colbacktitle=passc!75,
+  fonttitle=\bfseries,breakable}
+
+% 游戏
+\newtcolorbox{playbox}[1]{enhanced,breakable,
+  colback=playc!5,colframe=playc!65,
+  boxrule=0.7pt,arc=1.5mm,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  title={\heiti 玩法：#1},coltitle=white,colbacktitle=playc!70,
+  fonttitle=\bfseries,breakable}
+
+% 提示
+\newtcolorbox{tipbox}{enhanced,breakable,
+  colback=tipc!4,colframe=tipc!55,boxrule=0.7pt,arc=1.5mm,
+  left=7pt,right=7pt,top=4pt,bottom=4pt,fontupper=\small}
+
+% 答案
+\newtcolorbox{ansbox}{enhanced,breakable,
+  colback=black!3,colframe=black!25,boxrule=0.5pt,arc=1mm,
+  left=6pt,right=6pt,top=3pt,bottom=3pt,fontupper=\small\kaishu}
+
+% ---------- 趣味三件套 ----------
+% 豆角爸爸翻车现场
+\newtcolorbox{blunder}{enhanced,breakable,
+  colback=black!3,colframe=black!50,
+  boxrule=0.7pt,arc=1.5mm,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  title={\heiti 豆角爸爸翻车现场},coltitle=white,colbacktitle=black!58,
+  fonttitle=\bfseries,fontupper=\kaishu}
+
+% 赌一把
+\newtcolorbox{gamble}[1]{enhanced,breakable,
+  colback=matc!7,colframe=matc,
+  boxrule=1.1pt,arc=1.5mm,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  title={\heiti #1},coltitle=white,colbacktitle=matc,
+  fonttitle=\bfseries}
+
+% 彩蛋任务
+\newtcolorbox{bonus}{enhanced,breakable,
+  colback=playc!5,colframe=playc!75,
+  frame style={dash pattern=on 5pt off 3pt},
+  boxrule=1.1pt,arc=1.5mm,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  title={\heiti 彩蛋任务（不算分，纯粹好玩）},coltitle=white,colbacktitle=playc!75,
+  fonttitle=\bfseries}
+
+% 单人旁白（开玩笑用）
+\newtcolorbox{aside}{enhanced,breakable,
+  colback=white,colframe=black!20,boxrule=0.5pt,
+  left=8pt,right=8pt,top=3pt,bottom=3pt,fontupper=\kaishu\small}
+
+% 单元信息条
+\newtcolorbox{unitinfo}{enhanced,breakable,
+  colback=mainc!5,colframe=mainc!60,boxrule=0.7pt,arc=1.5mm,
+  left=7pt,right=7pt,top=5pt,bottom=5pt}
+
+% ---------- 中文字符分类修正 ----------
+% 圈码（①②③）、几何图形（▲■●）、杂项符号（★）在 Unicode 里属“东亚模糊宽度”，
+% xeCJK 默认会把它们交给西文字体，导致渲染成空白。这里强制归入 CJK。
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF, "25A0 -> "25FF, "2600 -> "26FF, "3007}
+
+% ---------- 页眉页脚 ----------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\newcommand{\currentchapter}{}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{tipc}北师大版·数学二年级上册·家庭辅导手册}
+\fancyhead[R]{\small\color{tipc}\currentchapter}
+\fancyfoot[C]{\small\color{tipc}\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{mainc!50}\leaders\hrule height \headrulewidth\hfill}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\color{tipc}\thepage\,/\,\pageref{LastPage}}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------- 章节样式 ----------
+\ctexset{
+  section/numbering=false,
+  subsection/numbering=false,
+  subsubsection/numbering=false,
+  section/format={\raggedright\Large\heiti\color{mainc}},
+  section/beforeskip={6pt},
+  section/afterskip={10pt},
+  section/tocline={\large\heiti\selectfont#2},
+  subsection/format={\raggedright\large\heiti\color{mainc!90}},
+  subsection/beforeskip={14pt},
+  subsection/afterskip={6pt},
+  subsubsection/format={\raggedright\normalsize\heiti\color{tipc}},
+  subsubsection/beforeskip={8pt},
+  subsubsection/afterskip={4pt},
+}
+
+% 章标题宏：清页 + 设页眉
+\newcommand{\Chapter}[1]{%
+  \clearpage
+  \renewcommand{\currentchapter}{#1}%
+  \section{#1}%
+  \noindent{\color{mainc!35}\rule{\linewidth}{0.8pt}}\par\vspace{2pt}}
+
+% ---------- 常用小工具 ----------
+% 填空下划线
+\newcommand{\blank}[1][2.6em]{\underline{\hspace{#1}}}
+% 书写横线
+\newcommand{\wls}[1][1]{%
+  \par\noindent
+  \foreach \x in {1,...,#1}{\makebox[\linewidth][l]{\color{gray!55}\dotfill}\par\vspace{3.4mm}}}
+% 复选框
+\newcommand{\cb}{\tikz[baseline=-0.55ex]{\draw[tipc!70,line width=0.6pt](0,0)rectangle(0.4,0.4);}\hspace{0.35em}}
+% 星星
+\newcommand{\starx}{\textcolor{matc}{$\bigstar$}}
+% 竖式块（1 列运算符 + 3 列数字，定宽右对齐 → 每一位自动对齐）
+\newcolumntype{O}{>{\raggedleft\arraybackslash}p{0.85em}}
+\newcolumntype{D}{>{\raggedleft\arraybackslash}p{0.68em}}
+\newenvironment{shushi}{%
+  \par\smallskip\noindent\renewcommand{\arraystretch}{1.08}%
+  \begin{tabular}{@{}O D D D@{}}
+}{%
+  \end{tabular}\par\smallskip}
+% 同上，但可放进 tabular 单元格里并排使用
+\newenvironment{shushicell}{%
+  \renewcommand{\arraystretch}{1.08}%
+  \begin{tabular}{@{}O D D D@{}}
+}{%
+  \end{tabular}}
+% 高亮
+\newcommand{\key}[1]{\textcolor{mainc}{\heiti #1}}
+% 页码引用
+\newcommand{\seep}[1]{{\small\color{tipc}（教材 P#1）}}
+
+% ---------- 超链接（放最后） ----------
+\usepackage[bookmarksnumbered,bookmarksopen,hidelinks]{hyperref}
+\usepackage{bookmark}
+
+\renewcommand{\contentsname}{目\hspace{1em}录}
