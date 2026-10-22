@@ -3,7 +3,7 @@
 %  家庭数学辅导手册 · 二年级上册（北师大版）
 %  主体文件 —— 用 xelatex 编译两次，或直接运行 build.ps1
 % =============================================================
-\documentclass[UTF8,zihao=-4,a4paper,fontset=windows]{ctexart}
+\documentclass[UTF8,zihao=-4,a4paper,twoside,fontset=windows]{ctexart}
 
 \input{preamble}
 
@@ -17,6 +17,7 @@
 \pagestyle{plain}
 \tableofcontents
 \pagestyle{fancy}
+\MakeHeaders
 
 % ---------- 家长使用说明 ----------
 \input{chapters/01-howto}
@@ -49,7 +50,15 @@
 \input{appendix/e-fun}
 \input{appendix/f-bets}
 
-% ---------- 后记 ----------
+% ---------- 后记（内容最后一页，单独一页） ----------
 \input{chapters/99-afterword}
+
+% ---------- 补白页（自动补到偶数页，胶装用；无页眉页码） ----------
+\clearpage
+\makeatletter
+\ifodd\c@page\else
+  \null\thispagestyle{empty}\clearpage
+\fi
+\makeatother
 
 \end{document}
