@@ -195,6 +195,27 @@
 % ---------- 常用小工具 ----------
 % 填空下划线
 \newcommand{\blank}[1][2.6em]{\underline{\hspace{#1}}}
+
+% 课前协商留白：赢什么、输什么由父子俩课前谈定后手写
+\newcommand{\negolines}{%
+  \par\vspace{3pt}%
+  \noindent\textbf{赢的人：}\underline{\hspace{\dimexpr\linewidth-3.0cm\relax}}\par\vspace{7pt}%
+  \noindent\textbf{输的人：}\underline{\hspace{\dimexpr\linewidth-3.0cm\relax}}\par\vspace{7pt}%
+  \noindent{\small 小豆角签字\ \underline{\hspace{3.2cm}}\qquad
+              豆角爸爸签字\ \underline{\hspace{3.2cm}}}\par}
+
+% ---------- 放水暗号（只给豆角爸爸看）----------
+% 正文里出现水滴 = 提醒豆角爸爸“这里可以让一步”，小豆角不必懂
+\definecolor{dropc}{RGB}{64,150,205}
+\definecolor{hlc}{RGB}{255,241,186}
+\newcommand{\waterdrop}{%
+  \tikz[baseline=-0.55ex,x=1.8ex,y=1.8ex]{%
+    \fill[dropc] (0,0.60) .. controls (-0.40,0.05) and (-0.32,-0.40) .. (0,-0.40)
+                 .. controls (0.32,-0.40) and (0.40,0.05) .. (0,0.60) -- cycle;
+    \fill[white,opacity=0.70] (-0.11,0.12) circle (0.08);}}
+% 高亮 + 水滴：\letgo{要让步的那句说明}
+\newcommand{\hl}[1]{{\setlength{\fboxsep}{1.5pt}\colorbox{hlc}{#1}}}
+\newcommand{\letgo}[1]{\hl{#1}\waterdrop}
 % 书写横线
 \newcommand{\wls}[1][1]{%
   \par\noindent

@@ -4,7 +4,7 @@
 > 一本爸爸写给自己的二年级女儿的数学家庭辅导手册 —— 八个关卡，每次二十分钟，不刷题。
 
 [![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-008080?logo=latex&logoColor=white)](#编译)
-[![Pages](https://img.shields.io/badge/pages-110-success)](#)
+[![Pages](https://img.shields.io/badge/pages-112-success)](#)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/中文-简体-red)](#)
 [![Made by](https://img.shields.io/badge/作者-豆角爸爸-blue)](https://www.bd7iwd.com)
@@ -15,7 +15,7 @@
 
 一份**可以直接打印、照着执行**的家庭数学辅导手册，配合北京师范大学出版社《数学》二年级上册（2025 年 7 月第 1 版，2022 课标修订）使用。
 
-全书 110 页，包含 8 个"关卡"（对应课本 8 个单元）、4 次动手活动、三轮期末复习、两套模拟卷，以及 6 个可复印附录（口算卡、百数表、模拟人民币、记录表、奖状、战绩表）。
+全书 112 页，包含一篇前言、8 个"关卡"（对应课本 8 个单元）、4 次动手活动、三轮期末复习、两套模拟卷，以及 6 个可复印附录（口算卡、百数表、模拟人民币、记录表、奖状、战绩表）。
 
 这**不是**一本练习册。全书没有一道"口算天天练"，只有一句话反复出现：**先摆出来，再说出来，最后才写下来。**
 
@@ -35,13 +35,13 @@
 | 要求记住"满十进一" | 让小豆角自己把 10 根捆成 1 捆，捆二十次 |
 | 错了就再来十道 | 错了先问"你是怎么想的"，把错因写成一句话 |
 | 家长是监督者 | 家长是**头号翻车选手**，每关开头自曝一个真实糗事 |
-| 讲完了考一遍 | 每关开一个赌局，输的人扫地、学猫叫、请一瓶可乐 |
+| 讲完了考一遍 | 每关课前协商，赌注留空、当场手写，双方签字 |
 | 学完就完了 | 每关一个"彩蛋任务"：电梯挑战、身高排行榜、跳蚤市场、当一天采购员 |
 
 三个刻意的设计：
 
 1. **逻辑优先于记忆**。全书反复拆同一件事：手上的东西 → 画成图 → 写成算式 → 竖式／口诀。"从左往右是懂，从右往左是背。"
-2. **大人也要下场**。赌注大多打在爸爸身上（扫地、洗碗、不吃西红柿、不许抱公仔娃娃睡觉）。全程赢的爸爸，孩子不想跟他玩第二次。
+2. **大人也要下场**。每关课前谈一个赌，输赢写在书上、双方签字，赌注多半打在爸爸身上。全程赢的爸爸，孩子不想跟他玩第二次。
 3. **烂话多于好话**。全篇第一人称大白话，允许自嘲、允许说"这题我也错了"。
 
 ---
@@ -97,7 +97,7 @@ xelatex -interaction=nonstopmode main.tex
 xelatex -interaction=nonstopmode main.tex   # 第二遍，目录与页码才正确
 ```
 
-> 只编译一遍会得到 106 页（缺目录），第二遍才是完整的 110 页。
+> 只编译一遍会缺目录页码，第二遍才是完整的 112 页。
 
 **非 Windows 平台**：`main.tex` 第 6 行 `fontset=windows` 改成 `fontset=fandol`（需安装 `fonts-fandol`），或改成 `fontset=none` 并自行用 `\setCJKmainfont` 指定字体。字形集差异可能导致个别符号缺字，编译后请翻一遍。
 
@@ -108,7 +108,7 @@ xelatex -interaction=nonstopmode main.tex   # 第二遍，目录与页码才正�
 | TeX Live | 2025 |
 | ctex | 随 TeX Live |
 | 平台 | Windows 11 |
-| 输出 | 110 页 / A4 / 0 错误 / 0 溢出框 |
+| 输出 | 112 页 / A4 / 0 错误 / 0 溢出框 |
 
 ---
 
@@ -120,6 +120,7 @@ xelatex -interaction=nonstopmode main.tex   # 第二遍，目录与页码才正�
 ├── preamble.tex             样式（配色、功能框、竖式环境、页眉页脚）
 ├── chapters/
 │   ├── 00-cover.tex         封面
+│   ├── 00-preface.tex       前言（SOP 原则 + 两点说明）
 │   ├── 01-howto.tex         开局说明（人物、地图、三条铁律、十条约定）
 │   ├── 02-supplies.tex      开工前：要买什么、翻什么、印什么
 │   ├── 03-u1.tex  …  10-u8.tex   八个关卡
@@ -143,7 +144,7 @@ xelatex -interaction=nonstopmode main.tex   # 第二遍，目录与页码才正�
 这份东西最好的用法是**改一遍**，不是照抄一遍。
 
 - **换教材版本**：只要改 `chapters/` 里每关开头那行「（课本第 X 单元：…，PXX–PXX）」和对应任务，别的框架不用动
-- **换赌注**：`appendix/f-bets.tex` 一页纸全是赌注，改完重编即可
+- **换赌注**：赌注在书里是空白的，上课前和 `appendix/f-bets.tex` 的记录表一起手写；想改格式改那一页即可
 - **换称呼**：全书只用两个名字，全局替换即可换成你家孩子的小名
 - **换配色**：`preamble.tex` 顶部的 `mainc / tipc / playc / matc` 四个颜色变量
 
