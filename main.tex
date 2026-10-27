@@ -53,13 +53,21 @@
 \input{appendix/e-fun}
 \input{appendix/f-bets}
 
+% ---------- GUARD-AFTERWORD：保证后记落在偶数页（正文纸张正面） ----------
+\clearpage
+\makeatletter
+\ifodd\c@page
+  \null\thispagestyle{empty}\clearpage
+\fi
+\makeatother
+
 % ---------- 后记（内容最后一页，单独一页） ----------
 \input{chapters/99-afterword}
 
-% ---------- 补白页（自动补到偶数页，胶装用；无页眉页码） ----------
+% ---------- 补白页（封面由 PDF 第1页单独印刷，正文从第2页起 → 正面=偶数页） ----------
 \clearpage
 \makeatletter
-\ifodd\c@page\else
+\ifodd\c@page
   \null\thispagestyle{empty}\clearpage
 \fi
 \makeatother

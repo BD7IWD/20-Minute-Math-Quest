@@ -47,6 +47,13 @@
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{breakable,skins}
 
+% 注意 / 免责
+\definecolor{warnc}{HTML}{B7791F}
+\newtcolorbox{warnbox}{enhanced,breakable,
+  colback=warnc!6,colframe=warnc!75,
+  boxrule=0pt,leftrule=3pt,arc=0.6mm,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,breakable}
+
 % ---------- 绘图 ----------
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning,patterns,shapes.geometric,arrows.meta,decorations.pathreplacing}
