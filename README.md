@@ -86,7 +86,7 @@
 
 **深圳教育云资源平台**		https://zy.szedu.cn/
 
-**国家中小学智慧教育平台**	https://zy.szedu.cn/
+**国家中小学智慧教育平台**	https://basic.smartedu.cn/
 
 ---
 ## 编译
