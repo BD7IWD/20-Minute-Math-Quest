@@ -24,3 +24,8 @@ _*.png
 _*.log
 _*.py
 _*.md
+
+# 本地远端克隆副本（GitHub / GitCode 各一份）
+GitHub/
+gitcode/
+tmp/
