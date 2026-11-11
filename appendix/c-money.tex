@@ -1,0 +1,111 @@
+﻿% =============================================================
+%  附录 C  模拟人民币（可剪）
+% =============================================================
+\Chapter{附录 C\quad 模拟人民币（剪开即用）}
+
+\begin{unitinfo}
+\textbf{打印}：A4，\textbf{160\,g 卡纸}，单面，100\% 比例（\textbf{不要缩放}）。\\
+\textbf{说明}：这是\textbf{课堂教具用}的仿真币，仅为数学学习使用，
+不能用于任何真实交易。\\
+\textbf{建议印量}：10 元 $\times$2、5 元 $\times$4、1 元 $\times$6、5 角 $\times$8、1 角 $\times$8。
+如果家里能直接拿到真币，\textbf{优先用真币}，小豆角的钱感更真实。
+\end{unitinfo}
+
+\newcommand{\bill}[3]{%
+  \begin{tikzpicture}
+    \draw[#3,thick,rounded corners=1.2mm,fill=#3!6] (0,0) rectangle (8.0,4.1);
+    \draw[#3!45,thin,rounded corners=1.2mm] (0.28,0.28) rectangle (7.72,3.82);
+    \node[font=\scriptsize,color=#3] at (1.7,3.35) {中国人民银行};
+    \node[font=\scriptsize,color=#3!70] at (6.2,3.35) {教具用};
+    \node[font=\Huge\bfseries,color=#3] at (4.0,1.95) {#1};
+    \node[font=\scriptsize,color=#3!75,anchor=south east] at (7.6,0.35) {#2};
+  \end{tikzpicture}}
+
+\newcommand{\coin}[2]{%
+  \begin{tikzpicture}
+    \draw[#2,thick,fill=#2!8] (0,0) circle (1.75);
+    \draw[#2!45,thin] (0,0) circle (1.5);
+    \node[font=\large\bfseries,color=#2] at (0,0) {#1};
+  \end{tikzpicture}}
+
+\subsection*{10 元（印 2 张）}
+
+\begin{center}
+\bill{10 元}{拾圆}{sayc}\hspace{0.5cm}\bill{10 元}{拾圆}{sayc}
+\end{center}
+
+\subsection*{5 元（印 4 张）}
+
+\begin{center}
+\bill{5 元}{伍圆}{playc}\hspace{0.5cm}\bill{5 元}{伍圆}{playc}
+
+\vspace{0.35cm}
+\bill{5 元}{伍圆}{playc}\hspace{0.5cm}\bill{5 元}{伍圆}{playc}
+\end{center}
+
+\clearpage
+\subsection*{1 元（印 6 张）}
+
+\begin{center}
+\bill{1 元}{壹圆}{passc}\hspace{0.5cm}\bill{1 元}{壹圆}{passc}
+
+\vspace{0.35cm}
+\bill{1 元}{壹圆}{passc}\hspace{0.5cm}\bill{1 元}{壹圆}{passc}
+
+\vspace{0.35cm}
+\bill{1 元}{壹圆}{passc}\hspace{0.5cm}\bill{1 元}{壹圆}{passc}
+\end{center}
+
+\clearpage
+\subsection*{5 角（印 8 个）}
+
+\begin{center}
+\coin{5 角}{pitc}\hspace{0.5cm}\coin{5 角}{pitc}\hspace{0.5cm}%
+\coin{5 角}{pitc}\hspace{0.5cm}\coin{5 角}{pitc}
+
+\vspace{0.7cm}
+\coin{5 角}{pitc}\hspace{0.5cm}\coin{5 角}{pitc}\hspace{0.5cm}%
+\coin{5 角}{pitc}\hspace{0.5cm}\coin{5 角}{pitc}
+\end{center}
+
+\subsection*{1 角（印 8 个）}
+
+\begin{center}
+\coin{1 角}{matc}\hspace{0.5cm}\coin{1 角}{matc}\hspace{0.5cm}%
+\coin{1 角}{matc}\hspace{0.5cm}\coin{1 角}{matc}
+
+\vspace{0.7cm}
+\coin{1 角}{matc}\hspace{0.5cm}\coin{1 角}{matc}\hspace{0.5cm}%
+\coin{1 角}{matc}\hspace{0.5cm}\coin{1 角}{matc}
+\end{center}
+
+\clearpage
+\subsection*{换算速查（贴墙上）}
+
+\begin{center}
+\begin{tabular}{@{}p{6.2cm}p{6.2cm}@{}}
+\toprule
+\textbf{元与角} & \textbf{角与分} \\
+\midrule
+$1\ \text{元} = 10\ \text{角}$ & $1\ \text{角} = 10\ \text{分}$ \\
+$2\ \text{元} = 20\ \text{角}$ & $5\ \text{角} = 50\ \text{分}$ \\
+$5\ \text{元} = 50\ \text{角}$ & $3\ \text{角} = 30\ \text{分}$ \\
+$10\ \text{元} = 100\ \text{角}$ & $1\ \text{元} = 100\ \text{分}$ \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{换成“几元几角”要练的 6 个}} \\
+\midrule
+\multicolumn{2}{@{}l}{%
+25 角 $=2$ 元 5 角\qquad 38 角 $=3$ 元 8 角\qquad 70 角 $=7$ 元} \\
+\multicolumn{2}{@{}l}{%
+105 角 $=10$ 元 5 角\qquad 2 元 5 角 $=25$ 角\qquad 7 元 3 角 $=73$ 角} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tipbox}
+\textbf{给小豆角的一个小技巧}：\\
+看到“几元几角”换算成“角”，就把元数\textbf{后面添一个 0} 再加角数：
+2 元 5 角 → 20 + 5 = 25 角；7 元 3 角 → 70 + 3 = 73 角。\\
+反过来，看到“几十几角”，就\textbf{把最后一位当角}：38 角 → 3 元 8 角。
+\textbf{不要让小豆角背，要让小豆角用“1 元 = 10 角”推一次。}
+\end{tipbox}
